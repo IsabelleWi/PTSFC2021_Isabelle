@@ -13,8 +13,8 @@ QUANTILES = [0.025, 0.25, 0.5, 0.75, 0.975]
 
 #%%
 
-df_dax_1, df_dax_2, df_dax_3, df_dax_4, df_dax_5 = Prepare(number_datapoints = 1406, skip = 12)
-df_dax_1_lstm, df_dax_2_lstm, df_dax_3_lstm, df_dax_4_lstm, df_dax_5_lstm = Prepare(number_datapoints = 406, skip = 12) 
+df_dax_1, df_dax_2, df_dax_3, df_dax_4, df_dax_5 = Prepare(number_datapoints = 1406, skip = 12) #Skip needs to be adapted according to day
+df_dax_1_lstm, df_dax_2_lstm, df_dax_3_lstm, df_dax_4_lstm, df_dax_5_lstm = Prepare(number_datapoints = 406, skip = 12) #Skip needs to be adapted according to day
 
 X_train_1, X_test_1, y_train_1, y_test_1 = Remove_Outlier_and_Split(df_dax_1, True, ["x-5", "x-4", "x-3", "x-2", "x-1"], ["y"])
 X_train_2, X_test_2, y_train_2, y_test_2 = Remove_Outlier_and_Split(df_dax_2, True, ["x-5", "x-4", "x-3", "x-2", "x-1"], ["y"])
@@ -52,5 +52,5 @@ g5_l = TrainGarchNormal(pd.concat([y_train_5, y_test_5]), mean =[l5.iloc[0,0]], 
 #%%
 df_gl = pd.concat([g1_l, g2_l, g3_l, g4_l, g5_l], axis = 0)
 #%%
-print(df_gl.T)
+df_gl.to_excel("Dax Prediciton.xlsx")
 # %%

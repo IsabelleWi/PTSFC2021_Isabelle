@@ -11,6 +11,16 @@ from sklearn import ensemble
 
 def ols_quantile(m, X, q):
 
+  """
+  Input:
+  m: Fitted Statsmodel OLS Model
+  X: X Input for Predicition
+  q: Quantile
+
+  Output:
+  Prediction for given Quantile
+  """
+
     mean_pred = m.predict(X)
     se = np.sqrt(m.scale)
 
