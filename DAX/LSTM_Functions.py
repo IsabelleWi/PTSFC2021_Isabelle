@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
-from DAX_Preprocessing_Evaluation_Functions import *
+from Preprocessing_Evaluation_Functions import *
 
 
 def MakeTorch(X_train, y_train, X_test, y_test):

@@ -4,10 +4,10 @@
 import pandas as pd
 import numpy as np
 
-from DAX_Preprocessing_Evaluation_Functions import *
-from DAX_LSTM_Functions import *
-from DAX_Other_Models_Functions import *
-from DAX_GARCH_Functions import *
+from Preprocessing_Evaluation_Functions import *
+from LSTM_Functions import *
+from Models_Functions import *
+from GARCH_Functions import *
 
 QUANTILES = [0.025, 0.25, 0.5, 0.75, 0.975]
 #%%
