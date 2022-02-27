@@ -16,8 +16,7 @@ import numpy as np
 import random
 from tqdm import trange
 
-from Weather_NN_Functions import *
-from Weather_Preprocessing_Evaluation_Functions import *
+from Preprocessing_Evaluation_Functions import *
 
 def PrepareforNets(X_train, X_test, y_train, y_test):
 

@@ -21,9 +21,9 @@ from sklearn import ensemble
 import statsmodels.api as sm
 from scipy.stats import norm
 
-from Weather_NN_Functions import *
-from Weather_Preprocessing_Evaluation_Functions import *
-from Weather_Other_Models_Functions import *
+from Seq_to_Seq_Functions import *
+from Preprocessing_Evaluation_Functions import *
+from Models_Functions import *
 
 def ols_quantile(m, X, var, q):
 

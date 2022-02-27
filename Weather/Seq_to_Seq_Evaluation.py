@@ -17,8 +17,8 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 
-from Weather_NN_Functions import *
-from Weather_Preprocessing_Evaluation_Functions import *
+from Seq_to_Seq_Functions import *
+from Preprocessing_Evaluation_Functions import *
 
 # %%
 df_temp = pd.read_excel("Temp_Input.xlsx")
