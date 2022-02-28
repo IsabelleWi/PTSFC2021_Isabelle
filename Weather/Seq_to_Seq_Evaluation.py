@@ -30,6 +30,7 @@ df_wind = df_wind.iloc[:,1:]
 X_train_temp, X_test_temp, y_train_temp, y_test_temp = Prepare_NN(df_temp)
 X_train_wind, X_test_wind, y_train_wind, y_test_wind = Prepare_NN(df_wind)
 
+
 # %%
 
 teacher_forcing_ratio_temp    = 0.1 

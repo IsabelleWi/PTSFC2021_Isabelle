@@ -53,4 +53,5 @@ g5_l = TrainGarchNormal(pd.concat([y_train_5, y_test_5]), mean =[l5.iloc[0,0]], 
 df_gl = pd.concat([g1_l, g2_l, g3_l, g4_l, g5_l], axis = 0)
 #%%
 df_gl.to_excel("Dax Prediciton.xlsx")
+
 # %%

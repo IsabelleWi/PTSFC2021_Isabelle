@@ -157,4 +157,5 @@ RESULTS = pd.concat([df_o, df_rf, df_qr, df_qb, df_ga, df_gl, df_ga_gen, df_gl_g
                     keys = ['OLS', 'Random Forest', 'Quantile  Regression', 'Gradient Boosting', 'Garch (Normal)', 'Garch (Normal) with LSTM', 'Garch (GenHyp)', 'Garch (GenHyp) with LSTM'], axis = 1)
 
 RESULTS.to_excel('RESULTS.xlsx')
+
 # %%

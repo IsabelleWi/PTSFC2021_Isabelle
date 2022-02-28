@@ -81,7 +81,6 @@ def TrainGarchNormal(train_y, mean, alpha = 0.35, beta = 0.05, test_size = 360):
       results_25.append(pd.DataFrame(results).quantile(.25, axis=0))
       results_025.append(pd.DataFrame(results).quantile(.025, axis=0))
       
-
   return pd.concat([pd.DataFrame(results_025).reset_index(drop=True), 
                     pd.DataFrame(results_25).reset_index(drop=True), 
                     pd.DataFrame(results_5).reset_index(drop=True), 

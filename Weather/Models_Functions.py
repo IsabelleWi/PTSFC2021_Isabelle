@@ -31,8 +31,7 @@ def ols_quantile(m, X, var, q):
     se = np.sqrt(var.T)
 
     return mean_pred + norm.ppf(q) * se
-
-    
+ 
 def OLS_with_Quantiles(X_train, y_train, X_test, X_var_test):
 
   ols = sm.OLS(np.asarray(X_train, dtype=float), 
@@ -176,44 +175,44 @@ def Train_GB_Temp(X_36_train, X_36_test, y_36_train, y_36_test, X_48_train, X_48
     col_1_40                          = X_36_train.columns[2:42]
     col_mean_var                      = X_36_train.columns[42:44]
     col_6_6                           = X_36_train.columns[44:46]
-    col_1_40_mean_var_6_6             = [*col_1_40, *col_mean_var, *col_6_6]
-    r_col_1_40_mean_var_6_6           = TrainGB_t2(X_36_train[col_1_40_mean_var_6_6], X_36_test[col_1_40_mean_var_6_6], y_36_train, y_36_test, '36')
-    results_cat_36                    = r_col_1_40_mean_var_6_6
+    col_mean_var_6_6                  = [*col_mean_var, *col_6_6]
+    r_col_mean_var_6_6                = TrainGB_t2(X_36_train[col_mean_var_6_6], X_36_test[col_mean_var_6_6], y_36_train, y_36_test, '36')
+    results_cat_36                    = r_col_mean_var_6_6
 
     col_1_40                          = X_48_train.columns[2:42]
     col_mean_var                      = X_48_train.columns[42:44]
     col_6_6                           = X_48_train.columns[44:46]
-    col_1_40_mean_var_6_6             = [*col_1_40, *col_mean_var, *col_6_6]
+    col_mean_var_6_6                  = [*col_mean_var, *col_6_6]
     
-    r_col_1_40_mean_var_6_6           = TrainGB_t1(X_48_train[col_1_40_mean_var_6_6], X_48_test[col_1_40_mean_var_6_6], y_48_train, y_48_test, '48')
+    r_col_mean_var_6_6                = TrainGB_t1(X_48_train[col_mean_var_6_6], X_48_test[col_mean_var_6_6], y_48_train, y_48_test, '48')
     
-    results_cat_48                    = r_col_1_40_mean_var_6_6
+    results_cat_48                    = r_col_mean_var_6_6
 
     col_1_40                          = X_60_train.columns[2:42]
     col_mean_var                      = X_60_train.columns[42:44]
     col_6_6                           = X_60_train.columns[44:46]
-    col_1_40_mean_var_6_6             = [*col_1_40, *col_mean_var, *col_6_6]
+    col_mean_var_6_6                  = [*col_mean_var, *col_6_6]
     
-    r_col_1_40_mean_var_6_6           = TrainGB_t2(X_60_train[col_1_40_mean_var_6_6], X_60_test[col_1_40_mean_var_6_6], y_60_train, y_60_test, '60')
+    r_col_mean_var_6_6                = TrainGB_t2(X_60_train[col_mean_var_6_6], X_60_test[col_mean_var_6_6], y_60_train, y_60_test, '60')
    
-    results_cat_60                    = r_col_1_40_mean_var_6_6
+    results_cat_60                    = r_col_mean_var_6_6
 
     col_1_40                          = X_72_train.columns[2:42]
     col_mean_var                      = X_72_train.columns[42:44]
     col_6_6                           = X_72_train.columns[44:46]
-    col_1_40_mean_var_6_6             = [*col_1_40, *col_mean_var, *col_6_6]
+    col_mean_var_6_6                  = [*col_mean_var, *col_6_6]
     
-    r_col_1_40_mean_var_6_6           = TrainGB_t1(X_72_train[col_1_40_mean_var_6_6], X_72_test[col_1_40_mean_var_6_6], y_72_train, y_72_test, '72')
+    r_col_mean_var_6_6               = TrainGB_t1(X_72_train[col_mean_var_6_6], X_72_test[col_mean_var_6_6], y_72_train, y_72_test, '72')
     
-    results_cat_72                   = r_col_1_40_mean_var_6_6
+    results_cat_72                   = r_col_mean_var_6_6
 
-    col_1_40                          = X_84_train.columns[2:42]
-    col_mean_var                      = X_84_train.columns[42:44]
-    col_6_6                           = X_84_train.columns[44:46]
-    col_1_40_mean_var_6_6             = [*col_1_40, *col_mean_var, *col_6_6]
+    col_1_40                         = X_84_train.columns[2:42]
+    col_mean_var                     = X_84_train.columns[42:44]
+    col_6_6                          = X_84_train.columns[44:46]
+    col_mean_var_6_6                 = [*col_mean_var, *col_6_6]
     
-    r_col_1_40_mean_var_6_6           = TrainGB_t2(X_84_train[col_1_40_mean_var_6_6], X_84_test[col_1_40_mean_var_6_6], y_84_train, y_84_test, '84')
-    results_cat_84                    = r_col_1_40_mean_var_6_6
+    r_col_mean_var_6_6               = TrainGB_t2(X_84_train[col_mean_var_6_6], X_84_test[col_mean_var_6_6], y_84_train, y_84_test, '84')
+    results_cat_84                   = r_col_mean_var_6_6
 
     r0 = pd.concat([results_cat_36.iloc[:,0], results_cat_48.iloc[:,0], results_cat_60.iloc[:,0], results_cat_72.iloc[:,0], results_cat_84.iloc[:,0]], axis = 1)
     r0['Average'] = r0.mean(axis=1)

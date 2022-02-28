@@ -18,7 +18,6 @@ def Average(lst):
 
     return sum(lst) / len(lst)
 
-
 def compute_return(adj_close, h):
   
   """

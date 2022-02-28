@@ -60,5 +60,4 @@ result_gb = Train_GB_Wind(X_36_train, X_36_test, y_36_train, y_36_test, X_48_tra
 results_temp = pd.concat([result_bench, result_ols, result_gb], keys= ['Ens Quantiles', 'OLS', 'GB'], axis = 1)
 results_temp.to_excel("Wind Other Models.xlsx")
 
-
 # %%

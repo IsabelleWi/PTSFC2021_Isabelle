@@ -90,6 +90,7 @@ def Prepare_new_Input(date,
 #
 # Temperature
 
+
 df_temp = pd.read_excel("Temp_Input.xlsx")
 df_temp = df_temp.iloc[:,1:]
 
@@ -98,19 +99,19 @@ new_forecast_36, new_forecast_48, new_forecast_60, new_forecast_72, new_forecast
 
 QUANTILES = [0.025, 0.25, 0.5, 0.75, 0.975]
 
-results_gb = np.concatenate([gb_quantile_t2(X_36_train.iloc[:,2:46], y_36_train, new_forecast_36.iloc[:,1:45], q) for q in QUANTILES]) 
+results_gb = np.concatenate([gb_quantile_t2(X_36_train.iloc[:,42:46], y_36_train, new_forecast_36.iloc[:,41:45], q) for q in QUANTILES]) 
 result36 = ReshapeHour(results_gb)
 
-results_gb = np.concatenate([gb_quantile_t1(X_48_train.iloc[:,2:46], y_48_train, new_forecast_48.iloc[:,1:45], q) for q in QUANTILES]) 
+results_gb = np.concatenate([gb_quantile_t1(X_48_train.iloc[:,42:46], y_48_train, new_forecast_48.iloc[:,41:45], q) for q in QUANTILES]) 
 result48 = ReshapeHour(results_gb)
 
-results_gb = np.concatenate([gb_quantile_t2(X_60_train.iloc[:,2:46], y_60_train, new_forecast_60.iloc[:,1:45], q) for q in QUANTILES]) 
+results_gb = np.concatenate([gb_quantile_t2(X_60_train.iloc[:,42:46], y_60_train, new_forecast_60.iloc[:,41:45], q) for q in QUANTILES]) 
 result60 = ReshapeHour(results_gb)
 
-results_gb = np.concatenate([gb_quantile_t1(X_72_train.iloc[:,2:46], y_72_train, new_forecast_72.iloc[:,1:45], q) for q in QUANTILES]) 
+results_gb = np.concatenate([gb_quantile_t1(X_72_train.iloc[:,42:46], y_72_train, new_forecast_72.iloc[:,41:45], q) for q in QUANTILES]) 
 result72 = ReshapeHour(results_gb)
 
-results_gb = np.concatenate([gb_quantile_t2(X_84_train.iloc[:,2:46], y_84_train, new_forecast_84.iloc[:,1:45], q) for q in QUANTILES]) 
+results_gb = np.concatenate([gb_quantile_t2(X_84_train.iloc[:,42:46], y_84_train, new_forecast_84.iloc[:,41:45], q) for q in QUANTILES]) 
 result84 = ReshapeHour(results_gb)
 
 result_temp = pd.concat([result36, result48, result60, result72, result84])

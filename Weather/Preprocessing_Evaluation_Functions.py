@@ -274,6 +274,7 @@ def Remove_Outlier_and_Split(df_input,
   return X_train, X_test, y_train, y_test
 
 
+
 def Prepare_NN(data_weather):
 
     print('Shape: ',data_weather.shape)

@@ -9,7 +9,6 @@ from torch.autograd import Variable
 
 from Preprocessing_Evaluation_Functions import *
 
-
 def MakeTorch(X_train, y_train, X_test, y_test):
   
   x11 = np.array(get_technical_indicators(X_train['x-5']))
@@ -68,7 +67,6 @@ class LSTM(nn.Module):
         c_0 = Variable(torch.zeros(
             self.num_layers, x.size(0), self.hidden_size))
         
-        # Propagate input through LSTM
         out, (hn, cn) = self.lstm(x, (h_0, c_0))
 
         #h_out = h_out[self.num_layers-1].view(-1, self.hidden_size)
@@ -101,15 +99,13 @@ def Train_LSTM(x_train, y_train, x_test, num_epochs = 1000, learning_rate = 0.1)
 
   lstm = LSTM(num_classes, input_size, hidden_size, num_layers, seq_length)
 
-  criterion = torch.nn.L1Loss()  # mean-squared error for regression
+  criterion = torch.nn.L1Loss() 
   optimizer = torch.optim.Adam(lstm.parameters(), lr=learning_rate)
 
-  # Train the model
   for epoch in range(num_epochs):
       outputs = lstm(x_train)
       optimizer.zero_grad()
-      
-      # obtain the loss function
+
       loss = criterion(outputs, y_train)
       
       loss.backward()

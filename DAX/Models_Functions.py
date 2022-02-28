@@ -104,7 +104,6 @@ def RF_with_Quantiles(X_train_1, y_train_1, X_test_1, y_test_1):
   return pd.DataFrame(rf_results_ret1)
 
 
-
 def gb_quantile(X_train, train_labels, X, q):
 
   N_ESTIMATORS = 100
